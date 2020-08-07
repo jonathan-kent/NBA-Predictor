@@ -1,0 +1,123 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
+<head>
+<body>
+  <div class="NBAPredictor">
+    <img src="images/NBA_predictor.png" id="nbaPredictor">
+  </div>
+
+  <form autocomplete="off">
+    <div class="entries">
+
+      <div id="playerName">
+        <div class="textFormBoxTop">Player</div>
+        <input type="text" id="player name" name="player name">
+      </div>
+
+      <div id="opposingTeam">
+        <div class="textFormBoxTop">Opposing Team</div>
+        <input type="text" id="opponent" name="opponent">
+      </div>
+
+      <div id="vs">
+        <input type="checkbox" id="home" name="homeAway" checked="checked">
+        <label for="home"></label>
+      </div>
+
+    </div>
+
+    <button type="button" onClick="fromForm()">Predict!</button>
+
+    <div id="results">
+      <div id="ptsAstReb">
+        <div class="textFormBoxTop">Points</div>
+        <div class="outputBox" id="points">
+
+        </div>
+      </div>
+      <div id="ptsAstReb">
+        <div class="textFormBoxTop">Assists</div>
+        <div class="outputBox" id="assists">
+
+        </div>
+      </div>
+      <div id="ptsAstReb">
+        <div class="textFormBoxTop">Rebounds</div>
+        <div class="outputBox" id="rebounds">
+
+        </div>
+      </div>
+      <div id="ptsAstReb">
+        <div class="textFormBoxTop">Total</div>
+        <div class="outputBox" id="total">
+
+        </div>
+      </div>
+    </div>
+
+    <div id="weights">
+      <div>
+        <br><br><br>
+        Weighting
+      </div>
+      <br>
+      <div class="promptWrapper">
+        <div class="prompt">
+          Which games should be counted?
+        </div>
+        <div class="sliderBox">
+          <div id="leftLabel">All Games</div>
+          <div id="rightLabel">Only Recent Games</div>
+          <div class="sliderWrapper">
+            <input type="range" min=0 max=10 value=4 class="slider" id="time decay">
+          </div>
+        </div>
+      </div>
+
+      <div class="promptWrapper">
+        <div class="prompt">
+          How important are previous meetings?
+        </div>
+        <div class="sliderBox">
+          <div id="leftLabel">Not Important</div>
+          <div id="rightLabel">Very Important</div>
+          <div class="sliderWrapper">
+            <input type="range" min=0 max=40 value=20 class="slider" id="previous matchups">
+          </div>
+        </div>
+      </div>
+
+      <div class="promptWrapper">
+        <div class="prompt">
+          How much do home vs away games matter?
+        </div>
+        <div class="sliderBox">
+          <div id="leftLabel">Not Much</div>
+          <div id="rightLabel">A lot</div>
+          <div class="sliderWrapper">
+            <input type="range" min=1 max=20 value=5 class="slider" id="home away weight">
+          </div>
+        </div>
+      </div>
+
+      <div class="promptWrapper">
+        <div class="prompt">
+          Which teams should be taken into account?
+        </div>
+        <div class="sliderBox">
+          <div id="leftLabel">Only Similar Defenses</div>
+          <div id="rightLabel">All Defenses</div>
+          <div class="sliderWrapper">
+            <input type="range" min=1 max=15 value=5 class="slider" id="sim threshold">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+</body>
+</html>
